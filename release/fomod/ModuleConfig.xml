@@ -1,0 +1,142 @@
+﻿<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+	<moduleName>Sanctuary - Player Home Restored</moduleName>
+	<installSteps order="Explicit">
+		<installStep name="Custom">
+			<optionalFileGroups order="Explicit">
+				<group name="Version" type="SelectExactlyOne">
+					<plugins order="Explicit">
+						<plugin name="Full Version">
+							<description>
+								This version completely restores the player house and contains the workshop.
+							</description>
+							<image path="fomod\images\MAIN.jpg"/>
+							<files>
+								<file priority="2" source="Independent - Full Version\PreWarHouse.esm" destination="PreWarHouse.esm"/>
+								<folder priority="2" source="Meshes" destination="Meshes"/>
+							</files>
+							<conditionFlags>
+								<flag name="INDEPENDENT">On</flag>
+							</conditionFlags>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="Workshop-Only Version">
+							<description>
+								This version provides the workshop only.
+							</description>
+							<image path="fomod\images\Workshop.jpg"/>
+							<files>
+								<file priority="2" source="Independent - Workshop Only\PreWarHouse.esm" destination="PreWarHouse.esm"/>
+								<folder priority="2" source="Meshes" destination="Meshes"/>
+							</files>
+							<conditionFlags>
+								<flag name="INDEPENDENT">On</flag>
+							</conditionFlags>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="Full Version - SK">
+							<description>
+								This version completely restores the player house and contains the workshop. Note: requires the Settlement Keywords mod.
+							</description>
+							<image path="fomod\images\MAIN.jpg"/>
+							<files>
+								<file priority="2" source="SK Compatible - Full Version\PreWarHouse.esm" destination="PreWarHouse.esm"/>
+								<folder priority="2" source="Meshes" destination="Meshes"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="Workshop-Only Version - SK">
+							<description>
+								This version provides the workshop only. Note: requires the Settlement Keywords mod.
+							</description>
+							<image path="fomod\images\Workshop.jpg"/>
+							<files>
+								<file priority="2" source="SK Compatible - Workshop Only\PreWarHouse.esm" destination="PreWarHouse.esm"/>
+								<folder priority="2" source="Meshes" destination="Meshes"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+					</plugins>
+				</group>
+				<group name="" type="SelectAtMostOne">
+					<plugins order="Explicit">
+						<plugin name="Sprint Fix">
+							<description>
+								INI Fix for sprinting. If you have already added it to your ini file you don't need this.
+							</description>
+							<files>
+								<file priority="2" source="PreWarHouse.ini" destination="PreWarHouse.ini"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+					</plugins>
+				</group>
+			</optionalFileGroups>
+		</installStep>
+		<installStep name="Compatibility Patches">
+			<visible>
+					<flagDependency flag="INDEPENDENT" value="On" />
+			</visible>
+			<optionalFileGroups>
+				<group name="Compatibility Patches" type="SelectAtMostOne">
+					<plugins order="Explicit">
+						<plugin name="OCDecorator">
+							<description>
+								Compatibility with OCDecorator
+							</description>
+							<image path="fomod\images\OCD.jpg"/>
+							<files>
+								<file priority="2" source="Independent - Compatibilty\PHR - OCD.esp" destination="PHR - OCD.esp"/>
+							</files>
+							<conditionFlags>
+								<flag name="OCD">On</flag>
+							</conditionFlags>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="Alternate Settlements">
+							<description>
+								Compatibility with Alternate Settlements
+							</description>
+							<image path="fomod\images\ALTSET.jpg"/>
+							<files>
+								<file priority="2" source="Independent - Compatibilty\PHR - ALTSET.esp" destination="PHR - ALTSET.esp"/>
+							</files>
+							<conditionFlags>
+								<flag name="ALTSET">On</flag>
+							</conditionFlags>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="OCDecorator - Alternate Settlements">
+							<description>
+								Compatibility with OCDecorator and Alternate Settlements
+							</description>
+							<image path="fomod\images\OCD-ALTSET.png"/>
+							<files>
+								<file priority="2" source="Independent - Compatibilty\PHR - OCD - ALTSET.esp" destination="PHR - OCD - ALTSET.esp"/>
+							</files>
+							<conditionFlags>
+								<flag name="ALTSET">On</flag>
+							</conditionFlags>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+					</plugins>
+				</group>
+			</optionalFileGroups>
+		</installStep>
+	</installSteps>
+</config>
